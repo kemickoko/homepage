@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import classNames from 'classnames';
 
@@ -8,28 +8,35 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { to: '/', label: '自己紹介' },
+    { to: '/', label: 'ホーム' },
+    { to: '/about', label: '自己紹介' },
     { to: '/portfolio', label: 'ポートフォリオ' },
   ];
 
+  // モバイルメニュー開閉時にスクロール抑制
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
   return (
-    <nav className="bg-blue-600 text-white shadow">
+    <nav className="bg-blue-600 text-white shadow z-50 relative">
       <div className="max-w-4xl mx-auto px-4 py-4 flex justify-between items-center">
         <h1 className="text-xl font-bold">
           <Link to="/">えめっとラボ</Link>
         </h1>
 
-        {/* モバイルメニュー開閉ボタン */}
         <button
           className="md:hidden"
           onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle menu"
+          aria-label="メニューを開く"
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
-        {/* デスクトップ用ナビゲーション */}
-        <ul className="hidden md:flex space-x-4">
+        <ul className="hidden md:flex space-x-6 text-base">
           {navItems.map(({ to, label }) => (
             <li key={to}>
               <Link
@@ -45,14 +52,15 @@ const Navbar = () => {
         </ul>
       </div>
 
-      {/* モバイル用メニュー（開閉） */}
       {isOpen && (
-        <ul className="md:hidden px-4 pb-4 space-y-2">
+        <ul className="md:hidden px-4 pb-4 space-y-3 bg-blue-600 text-base">
           {navItems.map(({ to, label }) => (
             <li key={to}>
               <Link
                 to={to}
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  if (location.pathname !== to) setIsOpen(false);
+                }}
                 className={classNames('block hover:underline', {
                   'underline font-semibold': location.pathname === to,
                 })}

@@ -1,22 +1,29 @@
-import React, { useState } from "react";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-
-
-export const Home: React.FC = () => {
+export const Home = () => {
   return (
-    <div>
-      <main className="max-w-5xl mx-auto px-4 py-8">
-        <section className="mb-12">
-          <h1 className="text-4xl font-bold mb-4">こんにちは、えめっとです！</h1>
-          <p className="text-gray-700 text-lg">
-            開発の勉強のため、ホームページを作りました！
-          </p>
-        </section>
+    <main className="max-w-5xl mx-auto px-4 py-12 text-center">
+      <h1 className="text-4xl font-bold mb-6">えめっとラボへようこそ！</h1>
+      <p className="text-lg mb-4">
+        このページでは、個人の学習成果やWebアプリの実験などを公開しています。
+      </p>
+      <p className="mb-8">
+        自己紹介や技術スタックは
+        <Link to="/about" className="text-blue-600 underline hover:text-blue-800 ml-1">
+          こちら
+        </Link>
+        をご覧ください。
+      </p>
 
-        <section>
-          <h2 className="text-2xl font-semibold mb-4">自己紹介</h2>
-        </section>
-      </main>
-    </div>
+      <div className="space-y-4">
+        <Link
+          to="/portfolio"
+          className="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+        >
+          ポートフォリオを見る
+        </Link>
+      </div>
+    </main>
   );
 };
