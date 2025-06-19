@@ -4,28 +4,34 @@ import { SortableList } from "../components/Card/SortableList";
 const Portfolio = () => {
   const [works, setWorks] = useState([
     {
-      id: "todo",
-      title: "Todoアプリ",
-      description: "ReactとFirebaseで作成したTodo管理アプリ。",
+      id: "1",
+      title: "制作物１",
+      description: "制作物１",
       link: "https://your-todo.vercel.app",
     },
     {
-      id: "calc",
-      title: "計算機アプリ",
-      description: "Vite + TypeScript製のシンプルな電卓。",
+      id: "2",
+      title: "制作物２",
+      description: "制作物２",
       link: "https://your-calc.vercel.app",
     },
     {
-      id: "portfolio",
-      title: "ポートフォリオ",
-      description: "自己紹介と作品をまとめたページ。",
+      id: "3",
+      title: "制作物３",
+      description: "制作物３",
+      link: "https://your-portfolio.vercel.app",
+    },
+    {
+      id: "4",
+      title: "制作物４",
+      description: "制作物４",
       link: "https://your-portfolio.vercel.app",
     },
   ]);
 
   return (
     <section className="max-w-5xl mx-auto px-4 py-12">
-      <h2 className="text-3xl font-bold mb-8 text-center">ドラッグで並び替え</h2>
+      <h2 className="text-3xl font-bold mb-8 text-center">制作物</h2>
       <SortableList items={works} onChange={setWorks} />
     </section>
   );
