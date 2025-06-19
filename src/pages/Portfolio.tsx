@@ -7,25 +7,25 @@ const Portfolio = () => {
       id: "1",
       title: "制作物１",
       description: "制作物１",
-      link: "https://your-todo.vercel.app",
+      link: "",
     },
     {
       id: "2",
       title: "制作物２",
       description: "制作物２",
-      link: "https://your-calc.vercel.app",
+      link: "",
     },
     {
       id: "3",
       title: "制作物３",
       description: "制作物３",
-      link: "https://your-portfolio.vercel.app",
+      link: "",
     },
     {
       id: "4",
       title: "制作物４",
       description: "制作物４",
-      link: "https://your-portfolio.vercel.app",
+      link: "",
     },
   ]);
 
