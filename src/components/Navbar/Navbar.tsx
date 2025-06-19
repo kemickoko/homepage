@@ -11,6 +11,7 @@ const Navbar = () => {
     { to: '/', label: 'ホーム' },
     { to: '/about', label: '自己紹介' },
     { to: '/portfolio', label: 'ポートフォリオ' },
+    { to: '/blog', label: 'ブログ' },
   ];
 
   // モバイルメニュー開閉時にスクロール抑制
