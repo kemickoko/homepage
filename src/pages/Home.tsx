@@ -5,7 +5,7 @@ export const Home: React.FC = () => {
     <main className="max-w-5xl mx-auto px-4 py-12 text-center">
       <h1 className="text-4xl font-bold mb-6">えめっとのITラボへようこそ！</h1>
       <p className="text-lg mb-4">
-        このページでは、個人の学習成果やWebアプリの実験などを公開しています。
+        このページでは、個人の学習成果やWebアプリの開発実験などを公開しています。
       </p>
       <p className="mb-8">
         自己紹介や技術スタックは
