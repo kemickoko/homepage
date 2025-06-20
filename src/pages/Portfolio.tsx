@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { SortableList } from "../components/Card/SortableList";
 
-const Portfolio = () => {
+export const Portfolio: React.FC = () => {
   const [works, setWorks] = useState([
     {
       id: "1",
@@ -36,5 +36,3 @@ const Portfolio = () => {
     </section>
   );
 };
-
-export default Portfolio;

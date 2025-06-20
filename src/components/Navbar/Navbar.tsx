@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import classNames from 'classnames';
 
-const Navbar = () => {
+export const Navbar = () => {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -75,5 +75,3 @@ const Navbar = () => {
     </nav>
   );
 };
-
-export default Navbar;
