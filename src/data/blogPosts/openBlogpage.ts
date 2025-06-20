@@ -1,7 +1,7 @@
 import type { Post } from '../blogData';
 
 const blogpagePost: Post = {
-  slug: 'portfolio',
+  slug: 'blog-page',
   title: 'ブログページを作成',
   date: '2025-06-20',
   tags: ['React', 'Vite', 'TypeScript', 'Tailwind', 'Vercel'],

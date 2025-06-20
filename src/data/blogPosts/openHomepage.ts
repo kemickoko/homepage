@@ -1,7 +1,7 @@
 import type { Post } from '../blogData';
 
 const openHomepagePost: Post = {
-  slug: 'django-api',
+  slug: 'homepage',
   title: 'ホームページを作成しました。',
   date: '2025-06-18',
   tags: ['React', 'Vite', 'TypeScript', 'Tailwind', 'Vercel'],
