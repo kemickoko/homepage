@@ -9,6 +9,5 @@ export type Post = {
 
 // 一覧として export
 const modules: Record<string, { default: Post }> = import.meta.glob('./blogPosts/*.ts', { eager: true });
-console.log('モジュール一覧:', modules);
 export const getPosts = (): Post[] =>
   Object.values(modules).map(module => module.default);
