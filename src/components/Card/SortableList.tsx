@@ -1,16 +1,17 @@
 import {
   DndContext,
   closestCenter,
+  PointerSensor,
+  TouchSensor,
   useSensor,
   useSensors,
-  PointerSensor,
-} from "@dnd-kit/core";
+} from '@dnd-kit/core';
 import {
   SortableContext,
   arrayMove,
   verticalListSortingStrategy,
-} from "@dnd-kit/sortable";
-import { SortableItem } from "./SortableItem";
+} from '@dnd-kit/sortable';
+import { SortableItem } from './SortableItem';
 
 type Item = {
   id: string;
@@ -25,7 +26,15 @@ type Props = {
 };
 
 export const SortableList: React.FC<Props> = ({ items, onChange }) => {
-  const sensors = useSensors(useSensor(PointerSensor));
+  const sensors = useSensors(
+    useSensor(PointerSensor),
+    useSensor(TouchSensor, {
+      activationConstraint: {
+        delay: 250, // 長押しで有効化
+        tolerance: 5,
+      },
+    })
+  );
 
   const handleDragEnd = (event: any) => {
     const { active, over } = event;
