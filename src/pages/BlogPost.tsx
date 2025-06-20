@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import { getPosts } from '../data/blogData';
 
 export const BlogPost: React.FC = () => {
@@ -20,8 +21,19 @@ export const BlogPost: React.FC = () => {
           <span key={tag}>#{tag}</span>
         ))}
       </div>
-      <div className="prose prose-invert mt-6">
-        <ReactMarkdown>{post.content}</ReactMarkdown>
+      <div className="prose mt-6">
+        <ReactMarkdown 
+          remarkPlugins={[remarkGfm]}
+          components={{
+            a: ({ href, children }) => (
+              <a href={href} className="text-blue-400 underline hover:text-blue-600">
+                {children}
+              </a>
+            ),
+          }}
+        >
+          {post.content}
+        </ReactMarkdown>
       </div>
     </main>
   );

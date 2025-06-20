@@ -2,15 +2,15 @@ import type { Post } from '../blogData';
 
 const portfolioPost: Post = {
   slug: 'portfolio',
-  title: 'React + Vite でポートフォリオサイトを作った話',
+  title: 'ポートフォリオページを作成',
   date: '2025-06-18',
-  tags: ['React', 'Vite'],
+  tags: ['React', 'Vite', 'TypeScript', 'Tailwind', 'Vercel'],
   category: '開発記録',
   content: `
-Reactでポートフォリオサイトを作成し、Vercelにデプロイした記録です。
-- Viteでセットアップ
-- Tailwind CSSを使ってスタイリング
-- Vercelでホスティング
+Reactでポートフォリオページを作成
+- 遊びでカード形式にして並び替えられるようにしてみたよ
+- （並び変えたものを保存できるようにはしていない）
+- [ポートフォリオ記録](/portfolio)
 `,
 };
 
