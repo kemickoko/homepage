@@ -1,4 +1,4 @@
-import { aboutData } from '../data/aboutData';
+import { aboutData } from '../data/about/aboutData';
 import CategoryList from './CategoryList';
 
 const AboutSection = () => {

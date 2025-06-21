@@ -1,4 +1,4 @@
-import { getPosts } from '../data/blogData';
+import { getPosts } from '../data/blog/getPosts';
 import { Link } from 'react-router-dom';
 
 export const Blog = () => {
