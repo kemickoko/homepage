@@ -1,25 +1,17 @@
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 
-type Props = {
-  id: string;
-  title: string;
-  description: string;
-  link: string;
-};
+type Props = { id: string; children: React.ReactNode; className?: string; style?: React.CSSProperties };
 
-export const SortableItem: React.FC<Props> = ({ id, title, description, link }) => {
-  const {
-    attributes,
-    listeners,
-    setNodeRef,
-    transform,
-    transition,
-  } = useSortable({ id });
+export const SortableItem: React.FC<Props> = (({ id, children, className = '', style = {} }) => {
+  const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({ id });
 
-  const style = {
+  const combinedStyle = {
     transform: CSS.Transform.toString(transform),
-    transition,
+    transition: transition || 'transform 150ms ease',
+    touchAction: 'manipulation',
+    zIndex: isDragging ? 50 : undefined,
+    ...style,
   };
 
   return (
@@ -27,16 +19,10 @@ export const SortableItem: React.FC<Props> = ({ id, title, description, link }) 
       ref={setNodeRef}
       {...attributes}
       {...listeners}
-      style={style}
-      className="bg-white rounded-lg shadow p-4 touch-none cursor-grab select-none"
+      style={combinedStyle}
+      className={`relative cursor-grab select-none ${className}`}
     >
-      <h3 className="text-lg font-semibold mb-2">{title}</h3>
-      <p className="text-sm text-gray-600">{description}</p>
-      {link && (
-        <a href={link} className="text-blue-500 underline text-sm mt-2 inline-block">
-          詳細を見る
-        </a>
-      )}
+      {children}
     </div>
   );
-};
+});
