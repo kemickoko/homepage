@@ -8,9 +8,9 @@ export type WorkItem = {
 export const initialWorks: WorkItem[] = [
   {
     id: "1",
-    title: "制作物１",
-    description: "制作物１",
-    link: "1",
+    title: "ミニゲーム",
+    description: "コインの合計金額を当てるミニゲーム",
+    link: "https://coin-game-kappa.vercel.app/",
   },
   {
     id: "2",
