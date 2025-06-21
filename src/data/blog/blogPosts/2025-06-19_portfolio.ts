@@ -1,9 +1,7 @@
 import type { Post } from '../blogData';
 
-const portfolioPost: Post = {
-  slug: 'portfolio',
+export const post: Post = {
   title: 'ポートフォリオページを作成',
-  date: '2025-06-18',
   tags: ['React', 'Vite', 'TypeScript', 'Tailwind', 'Vercel'],
   category: '開発記録',
   content: `
@@ -14,4 +12,4 @@ Reactでポートフォリオページを作成
 `,
 };
 
-export default portfolioPost;
+export default post

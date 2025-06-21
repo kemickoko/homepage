@@ -1,9 +1,7 @@
 import type { Post } from '../blogData';
 
-const blogpagePost: Post = {
-  slug: 'blog-page',
+export const post: Post = {
   title: 'ブログページを作成',
-  date: '2025-06-20',
   tags: ['React', 'Vite', 'TypeScript', 'Tailwind', 'Vercel'],
   category: '開発記録',
   content: `
@@ -16,4 +14,4 @@ const blogpagePost: Post = {
 `,
 };
 
-export default blogpagePost;
+export default post;

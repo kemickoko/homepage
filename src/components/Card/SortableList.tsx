@@ -30,7 +30,7 @@ export const SortableList: React.FC<Props> = ({ items, onChange }) => {
     useSensor(PointerSensor),
     useSensor(TouchSensor, {
       activationConstraint: {
-        delay: 250, // 長押しで有効化
+        delay: 250,
         tolerance: 5,
       },
     })
@@ -46,15 +46,8 @@ export const SortableList: React.FC<Props> = ({ items, onChange }) => {
   };
 
   return (
-    <DndContext
-      collisionDetection={closestCenter}
-      onDragEnd={handleDragEnd}
-      sensors={sensors}
-    >
-      <SortableContext
-        items={items.map((item) => item.id)}
-        strategy={verticalListSortingStrategy}
-      >
+    <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
+      <SortableContext items={items.map((item) => item.id)} strategy={verticalListSortingStrategy}>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {items.map((item) => (
             <SortableItem key={item.id} {...item} />

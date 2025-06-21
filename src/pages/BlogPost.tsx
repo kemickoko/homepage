@@ -1,12 +1,11 @@
 import { useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { getPosts } from '../data/blogData';
+import { getPostBySlug } from '../data/blog/getPost';
 
 export const BlogPost: React.FC = () => {
   const { slug } = useParams();
-  const posts = getPosts();
-  const post = posts.find(p => p.slug === slug);
+  const post = getPostBySlug(slug || '');
 
   if (!post) return <p>記事が見つかりませんでした。</p>;
 
