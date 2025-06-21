@@ -5,13 +5,13 @@ import {
   TouchSensor,
   useSensor,
   useSensors,
+  type DragEndEvent,
 } from '@dnd-kit/core';
 import {
   SortableContext,
   arrayMove,
   verticalListSortingStrategy,
 } from '@dnd-kit/sortable';
-import { SortableItem } from './SortableItem';
 
 type Item = {
   id: string;
@@ -23,36 +23,33 @@ type Item = {
 type Props = {
   items: Item[];
   onChange: (newItems: Item[]) => void;
+  children: React.ReactNode;
 };
 
-export const SortableList: React.FC<Props> = ({ items, onChange }) => {
+export const SortableProvider: React.FC<Props> = ({ items, onChange, children }) => {
   const sensors = useSensors(
-    useSensor(PointerSensor),
     useSensor(TouchSensor, {
       activationConstraint: {
-        delay: 250,
-        tolerance: 5,
+        delay: 150,
+        tolerance: 10,
       },
-    })
+    }),
+    useSensor(PointerSensor)
   );
 
-  const handleDragEnd = (event: any) => {
+  const handleDragEnd = (event: DragEndEvent) => {
     const { active, over } = event;
-    if (active.id !== over?.id) {
-      const oldIndex = items.findIndex((item) => item.id === active.id);
-      const newIndex = items.findIndex((item) => item.id === over.id);
+    if (over && active.id !== over.id) {
+      const oldIndex = items.findIndex(item => item.id === active.id);
+      const newIndex = items.findIndex(item => item.id === over.id);
       onChange(arrayMove(items, oldIndex, newIndex));
     }
   };
 
   return (
     <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
-      <SortableContext items={items.map((item) => item.id)} strategy={verticalListSortingStrategy}>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {items.map((item) => (
-            <SortableItem key={item.id} {...item} />
-          ))}
-        </div>
+      <SortableContext items={items.map(item => item.id)} strategy={verticalListSortingStrategy}>
+        {children}
       </SortableContext>
     </DndContext>
   );
