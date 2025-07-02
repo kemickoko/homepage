@@ -1,15 +1,13 @@
 import type { Post } from '../blogData';
 
 export const post: Post = {
-  title: 'ブログページを作成',
+  title: '硬貨の合計金額を当てるゲームを作成',
   tags: ['React', 'Vite', 'TypeScript', 'Tailwind', 'Vercel'],
   category: '開発記録',
   content: `
-### ブログページを作成
-- Markdownで表記できるようにしてみたよ
-# 大見出し
-## 中見出し
-### 小見出し
+### 硬貨の合計金額を当てるゲームを作成しました
+キャッシュレスの時代に硬貨のゲームを作りました。  
+頭使うよ。やってみてね。  
   
 👉 [ポートフォリオ記録](/portfolio)
 `,
