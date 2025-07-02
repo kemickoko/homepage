@@ -9,7 +9,7 @@ export const post: Post = {
 
 - [自己紹介](/about)ページ作成
 - Vite + React + TypeScript + Tailwind で作成し、Vercel にデプロイ
-
+  
 👉 [ホーム画面に戻る](/)
 `,
 };
