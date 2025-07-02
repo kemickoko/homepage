@@ -1,4 +1,5 @@
 import { SortableItem } from './SortableItem';
+import { LinkButton } from '../Button/LinkButton';
 
 type Item = {
   id: string;
@@ -25,24 +26,20 @@ export const SortableGrid: React.FC<Props> = ({ items }) => {
           <p className="text-sm text-gray-600 mb-3">{item.description}</p>
           <div className="mt-2 space-x-2">
             {item.link && (
-              <a
+              <LinkButton
                 href={item.link}
-                className="inline-block text-sm text-white bg-indigo-500 hover:bg-indigo-600 px-4 py-1.5 rounded-md transition"
-                target="_blank"
-                rel="noopener noreferrer"
+                className="bg-indigo-500 hover:bg-indigo-600"
               >
                 詳細を見る
-              </a>
+              </LinkButton>
             )}
             {item.github && (
-              <a
+              <LinkButton
                 href={item.github}
-                className="inline-block text-sm text-white bg-gray-600 hover:bg-gray-700 px-4 py-1.5 rounded-md transition"
-                target="_blank"
-                rel="noopener noreferrer"
+                className="bg-gray-600 hover:bg-gray-700"
               >
                 GitHub
-              </a>
+              </LinkButton>
             )}
           </div>
         </SortableItem>
