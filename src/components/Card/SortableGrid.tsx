@@ -5,6 +5,7 @@ type Item = {
   title: string;
   description: string;
   link: string;
+  github?: string;
 };
 
 type Props = {
@@ -32,8 +33,19 @@ export const SortableGrid: React.FC<Props> = ({ items }) => {
               詳細を見る →
             </a>
           )}
+          {item.github && (
+            <a
+              href={item.github}
+              className="text-gray-500 hover:underline text-sm block mt-1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub →
+            </a>
+          )}
         </SortableItem>
       ))}
+      
     </div>
   );
 };

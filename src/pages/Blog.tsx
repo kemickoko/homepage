@@ -5,7 +5,7 @@ export const Blog = () => {
   const posts = getPosts().sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return (
-    <main className="max-w-5xl mx-auto px-4 py-8">
+    <main className="font-Kosugi max-w-5xl mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-6">ブログ一覧</h1>
       <ul className="space-y-6">
         {posts.map(post => (

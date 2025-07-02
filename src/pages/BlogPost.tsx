@@ -10,7 +10,7 @@ export const BlogPost: React.FC = () => {
   if (!post) return <p>記事が見つかりませんでした。</p>;
 
   return (
-    <main className="max-w-3xl mx-auto px-4 py-8">
+    <main className="font-Kosugi max-w-3xl mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-2">{post.title}</h1>
       <p className="text-sm text-gray-400">
         {post.date} / {post.category}
