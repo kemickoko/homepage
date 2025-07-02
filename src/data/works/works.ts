@@ -11,7 +11,7 @@ export const initialWorks: WorkItem[] = [
     id: "1",
     title: "ホームページ",
     description: "このサイトです",
-    link: "https://homepage-xi-indol.vercel.app/",
+    link: "",
     github: "https://github.com/kemickoko/homepage",
   },
   {

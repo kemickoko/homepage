@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 export const Home: React.FC = () => {
   return (
     <main className="font-Kosugi max-w-5xl mx-auto px-4 py-12 text-center">
-      <h1 className="text-4xl font-bold mb-6">えめっとのITラボへようこそ！</h1>
+      <h1 className="text-4xl font-bold mb-6">えめっとのIT研究所へようこそ！</h1>
       <p className="text-lg mb-4">
         このホームページでは、個人の学習成果やWebアプリ開発の実験などを公開しています。
       </p>

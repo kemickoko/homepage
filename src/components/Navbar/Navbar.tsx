@@ -26,7 +26,7 @@ export const Navbar = () => {
     <nav className="bg-blue-600 text-white shadow z-50 relative">
       <div className="max-w-4xl mx-auto px-4 py-4 flex justify-between items-center">
         <h1 className="text-xl font-bold">
-          <Link to="/">えめっとラボ</Link>
+          <Link to="/">えめっとの研究所</Link>
         </h1>
 
         <button
