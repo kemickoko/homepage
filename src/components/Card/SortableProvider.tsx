@@ -18,6 +18,7 @@ type Item = {
   title: string;
   description: string;
   link: string;
+  github?: string;
 };
 
 type Props = {

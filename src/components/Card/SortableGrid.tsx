@@ -23,29 +23,30 @@ export const SortableGrid: React.FC<Props> = ({ items }) => {
         >
           <h3 className="text-xl font-bold text-gray-800 mb-2">{item.title}</h3>
           <p className="text-sm text-gray-600 mb-3">{item.description}</p>
-          {item.link && (
-            <a
-              href={item.link}
-              className="text-indigo-500 font-medium hover:underline text-sm"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              詳細を見る →
-            </a>
-          )}
-          {item.github && (
-            <a
-              href={item.github}
-              className="text-gray-500 hover:underline text-sm block mt-1"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub →
-            </a>
-          )}
+          <div className="mt-2 space-x-2">
+            {item.link && (
+              <a
+                href={item.link}
+                className="inline-block text-sm text-white bg-indigo-500 hover:bg-indigo-600 px-4 py-1.5 rounded-md transition"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                詳細を見る
+              </a>
+            )}
+            {item.github && (
+              <a
+                href={item.github}
+                className="inline-block text-sm text-white bg-gray-600 hover:bg-gray-700 px-4 py-1.5 rounded-md transition"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub
+              </a>
+            )}
+          </div>
         </SortableItem>
       ))}
-      
     </div>
   );
 };
