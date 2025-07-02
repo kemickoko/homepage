@@ -8,7 +8,7 @@ export const Portfolio: React.FC = () => {
   const [works, setWorks] = useState<WorkItem[]>(initialWorks);
 
   return (
-    <div className="bg-gradient-to-r from-indigo-50 to-white min-h-screen">
+    <main className="font-Kosugi bg-gradient-to-r from-indigo-50 to-white min-h-screen">
       <section className="max-w-6xl mx-auto px-4 py-16 text-center">
         <h2 className="text-4xl font-extrabold mb-10 text-gray-900 tracking-tight">
           制作物一覧
@@ -17,6 +17,6 @@ export const Portfolio: React.FC = () => {
           <SortableGrid items={works} />
         </SortableProvider>
       </section>
-    </div>
+    </main>
   );
 };

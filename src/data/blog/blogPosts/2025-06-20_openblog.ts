@@ -5,12 +5,12 @@ export const post: Post = {
   tags: ['React', 'Vite', 'TypeScript', 'Tailwind', 'Vercel'],
   category: '開発記録',
   content: `
-ブログページを作成
-- Markdownで表示できるようにしてみたよ
+### ブログページを作成
+- Markdownで表記できるようにしてみたよ
 # 大見出し
 ## 中見出し
 ### 小見出し
-[ポートフォリオ記録](/portfolio)
+👉 [ポートフォリオ記録](/portfolio)
 `,
 };
 
