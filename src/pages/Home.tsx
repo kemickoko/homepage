@@ -8,7 +8,7 @@ export const Home: React.FC = () => {
         このホームページでは、個人の学習成果やWebアプリ開発の実験などを公開しています。
       </p>
       <p className="mb-8">
-        自己紹介や技術スタックは
+        自己紹介や習得技術は
         <Link to="/about" className="text-blue-600 underline hover:text-blue-800 ml-1">
           こちら
         </Link>
