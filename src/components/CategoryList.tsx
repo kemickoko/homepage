@@ -13,7 +13,7 @@ type Props = {
   data: Record<string, string[]>;
 };
 
-const CategoryList = ({ title, data }: Props) => {
+export const CategoryList = ({ title, data }: Props) => {
   return (
     <div className="mt-8">
       <h3 className="text-xl font-semibold mb-2 border-b-2 border-blue-400 inline-block">{title}</h3>
@@ -32,5 +32,3 @@ const CategoryList = ({ title, data }: Props) => {
     </div>
   );
 };
-
-export default CategoryList;
