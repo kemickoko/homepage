@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { SortableProvider } from '../components/Card/SortableProvider';
-import { SortableGrid } from '../components/Card/SortableGrid';
+import { SortableProvider } from '../components/ui/Card/SortableProvider';
+import { SortableGrid } from '../components/ui/Card/SortableGrid';
 import type { WorkItem } from '../data/works/works';
 import { initialWorks } from '../data/works/works';
 
