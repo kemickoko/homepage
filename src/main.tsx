@@ -6,7 +6,7 @@ import { About } from './pages/About'
 import { Portfolio } from './pages/Portfolio'
 import { Blog } from './pages/Blog';
 import { BlogPost } from './pages/BlogPost';
-import { Navbar } from './components/Navbar/Navbar';
+import { Navbar } from './components/ui/Navbar/Navbar';
 import './styles/globals.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

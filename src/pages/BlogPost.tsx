@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { getPostBySlug } from '../data/blog/getPost';
+import { getPostBySlug } from '../data/blog/getPostBySlug';
 
 export const BlogPost: React.FC = () => {
   const { slug } = useParams();
