@@ -10,17 +10,24 @@ export const BlogPost: React.FC = () => {
   if (!post) return <p>記事が見つかりませんでした。</p>;
 
   return (
-    <main className="font-Kosugi max-w-3xl mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-2">{post.title}</h1>
-      <p className="text-sm text-gray-400">
-        {post.date} / {post.category}
-      </p>
-      <div className="flex gap-2 text-sm text-blue-400 my-2">
-        {post.tags.map(tag => (
-          <span key={tag}>#{tag}</span>
-        ))}
+    <main className="font-Kosugi max-w-3xl w-full mx-auto px-4 py-8">
+      <div className="prose mx-auto mt-6">
+        <h1 className="text-3xl font-bold mb-2">{post.title}</h1>
+        <p className="text-sm text-gray-400">
+          {post.date} / {post.category}
+        </p>
+        <div className="flex flex-wrap gap-2 text-sm my-4">
+          {post.tags.map(tag => (
+            <span
+              key={tag}
+              className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-xs font-medium hover:bg-blue-200 transition"
+            >
+              #{tag}
+            </span>
+          ))}
+        </div>
       </div>
-      <div className="prose mt-6">
+      <div className="prose mx-auto mt-6 border border-gray-300 rounded-xl p-6 shadow-sm bg-white">
         <ReactMarkdown 
           remarkPlugins={[remarkGfm]}
           components={{

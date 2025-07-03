@@ -64,8 +64,15 @@ export const Blog = () => {
           >
             <h2 className="text-xl font-semibold">{post.title}</h2>
             <p className="text-sm text-gray-500">{post.date} / {post.category}</p>
-            <div className="mt-1 flex gap-2 text-xs text-blue-500">
-              {post.tags.map(tag => <span key={tag}>#{tag}</span>)}
+            <div className="mt-1 flex flex-wrap gap-2 text-xs">
+              {post.tags.map(tag => (
+                <span
+                  key={tag}
+                  className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-xs font-medium hover:bg-blue-200 transition"
+                >
+                  #{tag}
+                </span>
+              ))}
             </div>
             <Link to={`/blog/${post.slug}`} className="inline-block mt-2 text-blue-600 underline">
               記事を読む
