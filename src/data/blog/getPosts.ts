@@ -2,7 +2,7 @@ import type { PostWithMeta } from './blogData';
 
 /**
  * blog-posts ディレクトリ内の投稿ファイルをすべて取得し、
- * ファイル名から日付とスラグを抽出して辞書型の配列にした投稿一覧を返す関数。
+ * ファイル名から日付とスラグを抽出して投稿オブジェクトの配列として返す関数。
  *
  * ファイル名の形式: `YYYY-MM-DD_slug.ts`
  * 例: `2025-06-20_django-api.ts` → date: '2025-06-20', slug: 'django-api'
