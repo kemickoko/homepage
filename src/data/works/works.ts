@@ -16,7 +16,7 @@ export const initialWorks: WorkItem[] = [
   },
   {
     id: "2",
-    title: "ミニゲーム",
+    title: "硬貨計算ゲーム",
     description: "コインの合計金額を当てるミニゲーム",
     link: "https://coin-game-kappa.vercel.app/",
     github: "https://github.com/kemickoko/coin-game",
