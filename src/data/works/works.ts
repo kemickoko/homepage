@@ -21,4 +21,11 @@ export const initialWorks: WorkItem[] = [
     link: "https://coin-game-kappa.vercel.app/",
     github: "https://github.com/kemickoko/coin-game",
   },
+  {
+    id: "3",
+    title: "Kコード検索アプリ",
+    description: "指定の形式のcsvファイルからtsファイルに自動変換し、検索システムで表示するアプリ",
+    link: "https://kemickoko.github.io/kcode-viewer/",
+    github: "https://github.com/kemickoko/kcode-viewer",
+  },
 ];
